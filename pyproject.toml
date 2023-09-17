@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "llama-index-backend"
+version = "0.1.0"
+description = ""
+authors = ["kohei <koheitech001@gmail.com>"]
+readme = "README.md"
+packages = [{include = "llama_index_backend"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+llama-index = "^0.8.27"
+redis = "^5.0.0"
+llama-cpp-python = "^0.2.6"
+sentence-transformers = "^2.2.2"
+torch = ">=2.0.0, !=2.0.1"
+langchain = "^0.0.292"
+python-dotenv = "^1.0.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
