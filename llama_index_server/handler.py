@@ -8,6 +8,7 @@ import filerouter
 from llama_index_server.config import Config
 from llama_index_server.logconf import mylogger
 from llama_index_server import func_llamaindex
+from llama_index_server.routes_depends import QueryItem
 logger = mylogger(__name__)
 
 
@@ -52,7 +53,7 @@ class myProcessor(filerouter.processor):
     def query(
         self,
         index_id: str,
-        query: str
+        query_item: QueryItem
     ):
         print(index_id)
         print(query)
@@ -62,7 +63,7 @@ class myProcessor(filerouter.processor):
         )
         res = func_llamaindex.ask(
             index,
-            query
+            query_item.query
         )
         print(res)
         print(type(res))

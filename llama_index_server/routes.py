@@ -7,9 +7,8 @@ from filerouter import processType
 
 from llama_index_server.handler import myProcessor
 from llama_index_server.config import Config
-
-# from routes.detection_depends import params_detector, params_model
-
+from llama_index_server.routes_depends import QueryItem
+    
 
 def get_router(
     cfg: Config
@@ -44,10 +43,11 @@ def get_router(
             **params
         )
 
+
     @router.post('/index/{index_id}/query')
     def post_query(
         index_id: str,
-        query: str
+        query: QueryItem
         # params: dict = Depends(params_model)
     ):  
         """
