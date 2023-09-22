@@ -4,7 +4,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class ConfigRedis():
+class RedisConfig():
     redis_host: str
     redis_port: int
 
@@ -13,7 +13,7 @@ class ConfigRedis():
         cls,
         host: str,
         port: int
-    ) -> 'ConfigRedis':
+    ) -> 'RedisConfig':
         
         return cls(
             host,
@@ -23,29 +23,29 @@ class ConfigRedis():
 
 @dataclass
 class Config():
-    llm: str
+    app_version: str
     llm_name: str
     llm_key: Optional[str]
     embedmodel: str
-    redis: ConfigRedis
+    redis: RedisConfig
 
 
     @classmethod
     def from_defaults(
         cls,
-        llm: str,
+        app_version: str,
         llm_name: str,
         llm_key: Optional[str],
-        embedmodel: str,
+        embed_name: str,
         redis_host: str,
         redis_port: int
     ) -> 'Config':
         
-        redis = ConfigRedis.from_defaults(redis_host, redis_port)
+        redis = RedisConfig.from_defaults(redis_host, redis_port)
         return cls(
-            llm,
+            app_version,
             llm_name,
             llm_key,
-            embedmodel,
+            embed_name,
             redis
         )

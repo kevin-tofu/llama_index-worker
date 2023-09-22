@@ -15,7 +15,12 @@ sentence-transformers = "^2.2.2"
 torch = ">=2.0.0, !=2.0.1"
 langchain = "^0.0.292"
 python-dotenv = "^1.0.0"
+filerouter = {git = "https://github.com/kevin-tofu/FileRouter.git"}
+pypdf = "^3.16.1"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.2"
 
 [build-system]
 requires = ["poetry-core"]
