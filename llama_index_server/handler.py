@@ -56,7 +56,7 @@ class myProcessor(filerouter.processor):
         query_item: QueryItem
     ):
         print(index_id)
-        print(query)
+        print(query_item)
         index = func_llamaindex.load_index_fromRedis(
             index_id,
             self.cfg.redis

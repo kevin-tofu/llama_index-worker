@@ -91,8 +91,8 @@ def docs2index(
     index_id: str,
     storage: StorageContext,
     service: ServiceContext,
-# ) -> BaseIndex:
-) -> VectorStoreIndex:
+) -> BaseIndex:
+# ) -> VectorStoreIndex:
     reader = SimpleDirectoryReader(
         input_files=docs_path
     )
